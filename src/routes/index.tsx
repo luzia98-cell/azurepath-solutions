@@ -42,19 +42,18 @@ const reasons = [
 function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-hero-gradient">
-        <div className="absolute inset-0 grid-bg opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+      {/* HERO — dark navy section, mirrors azimuteit.pt */}
+      <section className="relative overflow-hidden bg-hero-gradient text-white">
+        <div className="absolute inset-0 grid-bg-dark opacity-40" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-28">
           <div className="flex flex-col justify-center animate-fade-up">
-            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-brand">
+            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-white">
               <Sparkles className="h-3 w-3" /> Azimute IT
             </div>
             <h1 className="text-4xl font-bold uppercase leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-              Soluções em <span className="text-gradient">Tecnologia</span> para a sua Empresa
+              Soluções em <span className="text-gradient bg-gradient-to-r from-[oklch(0.75_0.15_230)] to-white bg-clip-text">Tecnologia</span> para a sua Empresa
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+            <p className="mt-6 max-w-xl text-lg text-white/70">
               Especialistas em redes informáticas, apoio informático, cibersegurança, telecomunicações
               e inteligência artificial.
             </p>
@@ -62,7 +61,7 @@ function HomePage() {
               <Button asChild size="lg" className="bg-brand-gradient text-brand-foreground shadow-glow hover:opacity-90">
                 <Link to="/contactos">Solicitar Orçamento <ArrowRight className="h-4 w-4" /></Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-brand/40 bg-transparent hover:bg-brand/10">
+              <Button asChild size="lg" variant="outline" className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white">
                 <Link to="/contactos">Falar com um Especialista</Link>
               </Button>
             </div>
@@ -80,11 +79,12 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section id="servicos" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      {/* SERVICES — light background */}
+      <section id="servicos" className="bg-background">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">O que fazemos</div>
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Os Nossos Serviços</h2>
+          <h2 className="mt-3 text-3xl font-bold text-navy sm:text-4xl">Os Nossos Serviços</h2>
           <p className="mt-4 text-muted-foreground">
             Soluções tecnológicas completas para empresas que querem crescer com segurança e eficiência.
           </p>
