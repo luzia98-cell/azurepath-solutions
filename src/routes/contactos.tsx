@@ -75,9 +75,9 @@ function ContactPage() {
 
           <form
             onSubmit={onSubmit}
-            className="rounded-2xl border border-border bg-card-gradient p-6 sm:p-8 lg:col-span-2"
+            className="rounded-2xl border border-border bg-card p-6 shadow-soft sm:p-8 lg:col-span-2"
           >
-            <h2 className="text-2xl font-bold">Envie-nos uma mensagem</h2>
+            <h2 className="text-2xl font-bold text-navy">Envie-nos uma mensagem</h2>
             <p className="mt-2 text-sm text-muted-foreground">Preencha o formulário e entraremos em contacto.</p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -127,16 +127,19 @@ function ContactPage() {
             </Button>
           </form>
         </div>
+      </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-2xl border border-border shadow-elegant">
-          <iframe
-            title="Mapa NexTech"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-9.16%2C38.71%2C-9.13%2C38.73&layer=mapnik"
-            className="h-80 w-full"
-            loading="lazy"
-          />
+      <section className="bg-background">
+        <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+          <div className="overflow-hidden rounded-2xl border border-border shadow-elegant">
+            <iframe
+              title="Mapa Azimute IT"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-9.16%2C38.71%2C-9.13%2C38.73&layer=mapnik"
+              className="h-80 w-full"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
     </>
