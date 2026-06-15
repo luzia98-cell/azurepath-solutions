@@ -113,6 +113,7 @@ function ContactPage() {
                 <Label htmlFor="mensagem">Mensagem *</Label>
                 <Textarea id="mensagem" name="mensagem" required rows={5} placeholder="Descreva o seu projeto ou necessidade..." />
               </div>
+            </div>
 
             <Button
               type="submit"
