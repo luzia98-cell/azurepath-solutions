@@ -38,34 +38,36 @@ function ContactPage() {
   return (
     <>
       <Toaster richColors position="top-center" />
-      <section className="relative overflow-hidden bg-hero-gradient">
-        <div className="absolute inset-0 grid-bg opacity-30" />
+      <section className="relative overflow-hidden bg-hero-gradient text-white">
+        <div className="absolute inset-0 grid-bg-dark opacity-30" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold sm:text-5xl">
-            Fale com um <span className="text-gradient">Especialista</span>
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Contacto</div>
+          <h1 className="mt-3 text-4xl font-bold uppercase sm:text-5xl">
+            Fale com um <span className="bg-gradient-to-r from-[oklch(0.85_0.12_220)] to-white bg-clip-text text-transparent">Especialista</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-2xl text-white/75">
             Conte-nos o desafio da sua empresa. A nossa equipa responde em até 24 horas úteis.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="bg-background">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-3">
           <div className="space-y-4 lg:col-span-1">
             {[
-              { icon: Mail, t: "Email", v: "geral@nextech.pt" },
+              { icon: Mail, t: "Email", v: "geral@azimuteit.pt" },
               { icon: Phone, t: "Telefone", v: "+351 210 000 000" },
-              { icon: MapPin, t: "Morada", v: "Av. da Liberdade, Lisboa" },
+              { icon: MapPin, t: "Morada", v: "Portugal" },
               { icon: Clock, t: "Horário", v: "Seg–Sex, 9h–18h" },
             ].map((c) => (
-              <div key={c.t} className="flex items-start gap-4 rounded-2xl border border-border bg-card-gradient p-5">
+              <div key={c.t} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-soft">
                 <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-gradient shadow-glow">
                   <c.icon className="h-5 w-5 text-brand-foreground" />
                 </div>
                 <div className="min-w-0">
                   <div className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{c.t}</div>
-                  <div className="mt-1 truncate font-medium">{c.v}</div>
+                  <div className="mt-1 truncate font-medium text-navy">{c.v}</div>
                 </div>
               </div>
             ))}
@@ -73,9 +75,9 @@ function ContactPage() {
 
           <form
             onSubmit={onSubmit}
-            className="rounded-2xl border border-border bg-card-gradient p-6 sm:p-8 lg:col-span-2"
+            className="rounded-2xl border border-border bg-card p-6 shadow-soft sm:p-8 lg:col-span-2"
           >
-            <h2 className="text-2xl font-bold">Envie-nos uma mensagem</h2>
+            <h2 className="text-2xl font-bold text-navy">Envie-nos uma mensagem</h2>
             <p className="mt-2 text-sm text-muted-foreground">Preencha o formulário e entraremos em contacto.</p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -125,16 +127,19 @@ function ContactPage() {
             </Button>
           </form>
         </div>
+      </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-2xl border border-border shadow-elegant">
-          <iframe
-            title="Mapa NexTech"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-9.16%2C38.71%2C-9.13%2C38.73&layer=mapnik"
-            className="h-80 w-full"
-            loading="lazy"
-          />
+      <section className="bg-background">
+        <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+          <div className="overflow-hidden rounded-2xl border border-border shadow-elegant">
+            <iframe
+              title="Mapa Azimute IT"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-9.16%2C38.71%2C-9.13%2C38.73&layer=mapnik"
+              className="h-80 w-full"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
     </>

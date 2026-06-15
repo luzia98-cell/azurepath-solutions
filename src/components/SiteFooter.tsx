@@ -3,7 +3,7 @@ import { Compass, Mail, Phone, MapPin } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/40 bg-surface">
+    <footer className="border-t border-border bg-surface">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4 lg:px-8">
         <div className="md:col-span-2">
           <Link to="/" className="flex items-center gap-2.5">
@@ -11,7 +11,7 @@ export function SiteFooter() {
               <Compass className="h-5 w-5 text-brand-foreground" />
             </div>
             <div className="leading-tight">
-              <div className="text-lg font-bold">AZIMUTE<span className="text-brand">.IT</span></div>
+              <div className="text-lg font-bold text-navy">AZIMUTE<span className="text-brand">.IT</span></div>
               <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Informática e Tecnologia</div>
             </div>
           </Link>

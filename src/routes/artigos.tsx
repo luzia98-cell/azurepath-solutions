@@ -36,41 +36,43 @@ const articles = [
 function ArtigosPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-hero-gradient">
-        <div className="absolute inset-0 grid-bg opacity-30" />
+      <section className="relative overflow-hidden bg-hero-gradient text-white">
+        <div className="absolute inset-0 grid-bg-dark opacity-30" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Blog</div>
-          <h1 className="mt-3 text-4xl font-bold sm:text-5xl">
-            Últimas <span className="text-gradient">Notícias</span>
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Blog</div>
+          <h1 className="mt-3 text-4xl font-bold uppercase sm:text-5xl">
+            Últimas <span className="bg-gradient-to-r from-[oklch(0.85_0.12_220)] to-white bg-clip-text text-transparent">Notícias</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-2xl text-white/75">
             Artigos, dicas e novidades sobre tecnologia, cibersegurança e inteligência artificial.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {articles.map((a) => (
-            <article
-              key={a.title}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card-gradient transition-all hover:-translate-y-1 hover:border-brand/50 hover:shadow-glow"
-            >
-              <div className="relative h-44 bg-hero-gradient">
-                <div className="absolute inset-0 grid-bg opacity-40" />
-                <div className="absolute left-4 top-4 rounded-full border border-brand/40 bg-background/60 px-3 py-1 text-xs font-medium text-brand backdrop-blur">
-                  {a.tag}
+      <section className="bg-background">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {articles.map((a) => (
+              <article
+                key={a.title}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow"
+              >
+                <div className="relative h-44 bg-hero-gradient">
+                  <div className="absolute inset-0 grid-bg-dark opacity-40" />
+                  <div className="absolute left-4 top-4 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+                    {a.tag}
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h2 className="text-lg font-semibold">{a.title}</h2>
-                <p className="mt-2 flex-1 text-sm text-muted-foreground">{a.excerpt}</p>
-                <Link to="/contactos" className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:opacity-80">
-                  Ler mais <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </article>
-          ))}
+                <div className="flex flex-1 flex-col p-6">
+                  <h2 className="text-lg font-semibold text-navy">{a.title}</h2>
+                  <p className="mt-2 flex-1 text-sm text-muted-foreground">{a.excerpt}</p>
+                  <Link to="/contactos" className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:opacity-80">
+                    Ler mais <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </>
