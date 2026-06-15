@@ -95,11 +95,24 @@ function ContactPage() {
                 <Label htmlFor="telefone">Telefone</Label>
                 <Input id="telefone" name="telefone" type="tel" placeholder="+351 ..." />
               </div>
+              <div className="space-y-2">
+                <Label htmlFor="periodo">Período de contacto</Label>
+                <select
+                  id="periodo"
+                  name="periodo"
+                  defaultValue=""
+                  className="flex h-9 w-full rounded-md border border-input bg-input px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                >
+                  <option value="" disabled>Selecione…</option>
+                  <option value="manha">Manhã</option>
+                  <option value="tarde">Tarde</option>
+                  <option value="noite">Noite</option>
+                </select>
+              </div>
               <div className="space-y-2 sm:col-span-2">
                 <Label htmlFor="mensagem">Mensagem *</Label>
                 <Textarea id="mensagem" name="mensagem" required rows={5} placeholder="Descreva o seu projeto ou necessidade..." />
               </div>
-            </div>
 
             <Button
               type="submit"
