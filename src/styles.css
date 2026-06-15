@@ -32,6 +32,7 @@
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-glow: var(--brand-glow);
+  --color-navy: var(--navy);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
 }
@@ -39,52 +40,59 @@
 :root {
   --radius: 0.75rem;
 
-  /* Deep tech navy palette */
-  --background: oklch(0.16 0.04 255);
-  --foreground: oklch(0.97 0.01 240);
+  /* WHITE THEME — inspired by azimuteit.pt */
+  --background: oklch(1 0 0);                          /* pure white */
+  --foreground: oklch(0.18 0.04 260);                  /* deep navy text */
 
-  --surface: oklch(0.20 0.045 255);
-  --surface-elevated: oklch(0.24 0.05 255);
+  --surface: oklch(0.985 0.005 250);                   /* very light grey/blue */
+  --surface-elevated: oklch(0.97 0.008 250);
 
-  --card: oklch(0.20 0.045 255);
-  --card-foreground: oklch(0.97 0.01 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.04 260);
 
-  --popover: oklch(0.22 0.05 255);
-  --popover-foreground: oklch(0.97 0.01 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.04 260);
 
-  --primary: oklch(0.72 0.18 240);
-  --primary-foreground: oklch(0.16 0.04 255);
+  /* Navy is the primary brand color */
+  --navy: oklch(0.22 0.08 265);
+  --primary: oklch(0.22 0.08 265);
+  --primary-foreground: oklch(1 0 0);
 
-  --brand: oklch(0.72 0.18 240);
-  --brand-foreground: oklch(0.99 0 0);
-  --brand-glow: oklch(0.82 0.15 230);
+  /* Bright cyan-blue accent (logo accent) */
+  --brand: oklch(0.62 0.18 245);
+  --brand-foreground: oklch(1 0 0);
+  --brand-glow: oklch(0.75 0.15 230);
 
-  --secondary: oklch(0.28 0.05 255);
-  --secondary-foreground: oklch(0.97 0.01 240);
+  --secondary: oklch(0.96 0.01 250);
+  --secondary-foreground: oklch(0.22 0.08 265);
 
-  --muted: oklch(0.26 0.04 255);
-  --muted-foreground: oklch(0.72 0.03 245);
+  --muted: oklch(0.96 0.01 250);
+  --muted-foreground: oklch(0.48 0.03 260);
 
-  --accent: oklch(0.82 0.15 230);
-  --accent-foreground: oklch(0.16 0.04 255);
+  --accent: oklch(0.95 0.03 240);
+  --accent-foreground: oklch(0.22 0.08 265);
 
   --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(0.99 0 0);
+  --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.32 0.04 255 / 0.6);
-  --input: oklch(0.28 0.05 255);
-  --ring: oklch(0.72 0.18 240);
+  --border: oklch(0.91 0.01 250);
+  --input: oklch(1 0 0);
+  --ring: oklch(0.62 0.18 245);
 
-  --gradient-hero: linear-gradient(135deg, oklch(0.16 0.04 255) 0%, oklch(0.22 0.08 250) 50%, oklch(0.18 0.06 255) 100%);
-  --gradient-brand: linear-gradient(135deg, oklch(0.72 0.18 240), oklch(0.82 0.15 220));
-  --gradient-card: linear-gradient(160deg, oklch(0.22 0.05 255 / 0.8), oklch(0.18 0.04 255 / 0.6));
-  --shadow-glow: 0 10px 40px -10px oklch(0.72 0.18 240 / 0.4);
-  --shadow-elegant: 0 20px 60px -20px oklch(0.10 0.04 255 / 0.6);
+  --gradient-hero: linear-gradient(135deg, oklch(0.18 0.08 265) 0%, oklch(0.28 0.12 260) 50%, oklch(0.22 0.10 265) 100%);
+  --gradient-brand: linear-gradient(135deg, oklch(0.22 0.08 265), oklch(0.62 0.18 245));
+  --gradient-card: linear-gradient(160deg, oklch(1 0 0), oklch(0.985 0.005 250));
+  --gradient-soft: linear-gradient(180deg, oklch(0.99 0.005 245) 0%, oklch(1 0 0) 100%);
+
+  --shadow-glow: 0 10px 40px -10px oklch(0.62 0.18 245 / 0.35);
+  --shadow-elegant: 0 20px 60px -20px oklch(0.22 0.08 265 / 0.25);
+  --shadow-soft: 0 4px 20px -4px oklch(0.22 0.08 265 / 0.08);
 }
 
 .dark {
-  --background: oklch(0.16 0.04 255);
-  --foreground: oklch(0.97 0.01 240);
+  /* keep neutral overrides — site uses white theme */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.04 260);
 }
 
 @layer base {
@@ -113,18 +121,27 @@
   .bg-hero-gradient { background: var(--gradient-hero); }
   .bg-brand-gradient { background: var(--gradient-brand); }
   .bg-card-gradient { background: var(--gradient-card); }
+  .bg-soft-gradient { background: var(--gradient-soft); }
   .shadow-glow { box-shadow: var(--shadow-glow); }
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
   .text-gradient {
     background: var(--gradient-brand);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
+  .text-navy { color: var(--navy); }
   .grid-bg {
     background-image:
-      linear-gradient(oklch(0.72 0.18 240 / 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.72 0.18 240 / 0.08) 1px, transparent 1px);
+      linear-gradient(oklch(0.62 0.18 245 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.62 0.18 245 / 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .grid-bg-dark {
+    background-image:
+      linear-gradient(oklch(1 0 0 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.06) 1px, transparent 1px);
     background-size: 48px 48px;
   }
 }
