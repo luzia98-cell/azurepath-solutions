@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Compass, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import logoAsset from "@/assets/logo-azimute.png.asset.json";
 
 export function SiteFooter() {
   return (
@@ -7,13 +8,11 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4 lg:px-8">
         <div className="md:col-span-2">
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="grid h-10 w-10 place-items-center rounded-lg bg-brand-gradient shadow-glow">
-              <Compass className="h-5 w-5 text-brand-foreground" />
-            </div>
-            <div className="leading-tight">
-              <div className="text-lg font-bold text-navy">AZIMUTE<span className="text-brand">.IT</span></div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Informática e Tecnologia</div>
-            </div>
+            <img
+              src={logoAsset.url}
+              alt="Azimute IT"
+              className="h-10 w-auto"
+            />
           </Link>
           <p className="mt-4 max-w-md text-sm text-muted-foreground">
             Soluções em tecnologia: redes informáticas, apoio informático, cibersegurança,
