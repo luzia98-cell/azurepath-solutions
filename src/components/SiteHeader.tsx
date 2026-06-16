@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Compass } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoAsset from "@/assets/logo-azimute.png.asset.json";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -16,13 +17,11 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 shadow-soft backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex min-w-0 items-center gap-2.5">
-          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-brand-gradient shadow-glow">
-            <Compass className="h-5 w-5 text-brand-foreground" />
-          </div>
-          <div className="leading-tight">
-            <div className="text-base font-bold tracking-tight text-navy sm:text-lg">AZIMUTE<span className="text-brand">.IT</span></div>
-            <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Informática e Tecnologia</div>
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="Azimute IT"
+            className="h-10 w-auto shrink-0"
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
