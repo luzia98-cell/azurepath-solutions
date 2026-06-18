@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
@@ -11,10 +10,10 @@ import { Toaster } from "@/components/ui/sonner";
 export const Route = createFileRoute("/contactos")({
   head: () => ({
     meta: [
-      { title: "Contactos — NexTech | Fale com um Especialista" },
-      { name: "description", content: "Entre em contacto com a NexTech para apoio informático, cloud Azure, cibersegurança, IA e automação empresarial." },
-      { property: "og:title", content: "Contactos — NexTech" },
-      { property: "og:description", content: "Fale com um especialista NexTech." },
+      { title: "Contactos — Azimute IT | Entre em contacto" },
+      { name: "description", content: "Entre em contacto com a Azimute IT para apoio informático, cloud Azure, cibersegurança, IA e automação empresarial." },
+      { property: "og:title", content: "Contactos — Azimute IT" },
+      { property: "og:description", content: "Fale connosco. Estamos na Costa da Caparica, Almada." },
       { property: "og:url", content: "/contactos" },
     ],
     links: [{ rel: "canonical", href: "/contactos" }],
@@ -38,100 +37,114 @@ function ContactPage() {
   return (
     <>
       <Toaster richColors position="top-center" />
-      <section className="relative overflow-hidden bg-hero-gradient text-white">
-        <div className="absolute inset-0 grid-bg-dark opacity-30" />
+
+      {/* Top header section — light background */}
+      <section className="relative overflow-hidden bg-[#f4f5f7]">
+        <div className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Contacto</div>
-          <h1 className="mt-3 text-4xl font-bold uppercase sm:text-5xl">
-            Fale com um <span className="bg-gradient-to-r from-[oklch(0.85_0.12_220)] to-white bg-clip-text text-transparent">Especialista</span>
+          <h1 className="text-4xl font-light tracking-wide text-navy sm:text-5xl">
+            Entre em contacto
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-white/75">
-            Conte-nos o desafio da sua empresa. A nossa equipa responde em até 24 horas úteis.
-          </p>
         </div>
       </section>
 
-      <section className="bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-3">
-          <div className="space-y-4 lg:col-span-1">
-            {[
-              { icon: Mail, t: "Email", v: "geral@azimuteit.pt" },
-              { icon: Phone, t: "Telefone", v: "+351 210 000 000" },
-              { icon: MapPin, t: "Morada", v: "Portugal" },
-              { icon: Clock, t: "Horário", v: "Seg–Sex, 9h–18h" },
-            ].map((c) => (
-              <div key={c.t} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-soft">
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-gradient shadow-glow">
-                  <c.icon className="h-5 w-5 text-brand-foreground" />
+      {/* Blue contact section */}
+      <section className="bg-[#2e3e9f] text-white">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2">
+            {/* Left: Form */}
+            <div>
+              <h2 className="mb-8 text-xl font-light">Liguem-me</h2>
+              <form onSubmit={onSubmit} className="space-y-5">
+                <div>
+                  <Label htmlFor="nome" className="text-sm font-normal text-white/80">
+                    Nome
+                  </Label>
+                  <Input
+                    id="nome"
+                    name="nome"
+                    required
+                    placeholder="O seu nome"
+                    className="mt-1 border-white/20 bg-white/10 text-white placeholder:text-white/50 focus-visible:ring-white/30"
+                  />
                 </div>
-                <div className="min-w-0">
-                  <div className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{c.t}</div>
-                  <div className="mt-1 truncate font-medium text-navy">{c.v}</div>
+                <div>
+                  <Label htmlFor="email" className="text-sm font-normal text-white/80">
+                    E-mail
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="email@empresa.pt"
+                    className="mt-1 border-white/20 bg-white/10 text-white placeholder:text-white/50 focus-visible:ring-white/30"
+                  />
                 </div>
-              </div>
-            ))}
-          </div>
-
-          <form
-            onSubmit={onSubmit}
-            className="rounded-2xl border border-border bg-card p-6 shadow-soft sm:p-8 lg:col-span-2"
-          >
-            <h2 className="text-2xl font-bold text-navy">Envie-nos uma mensagem</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Preencha o formulário e entraremos em contacto.</p>
-
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="space-y-2">
-                <Label htmlFor="nome">Nome *</Label>
-                <Input id="nome" name="nome" required placeholder="O seu nome" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="empresa">Empresa</Label>
-                <Input id="empresa" name="empresa" placeholder="Nome da empresa" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email *</Label>
-                <Input id="email" name="email" type="email" required placeholder="email@empresa.pt" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="telefone">Telefone</Label>
-                <Input id="telefone" name="telefone" type="tel" placeholder="+351 ..." />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="periodo">Período de contacto</Label>
-                <select
-                  id="periodo"
-                  name="periodo"
-                  defaultValue=""
-                  className="flex h-9 w-full rounded-md border border-input bg-input px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                <div>
+                  <Label htmlFor="telefone" className="text-sm font-normal text-white/80">
+                    Telemóvel
+                  </Label>
+                  <Input
+                    id="telefone"
+                    name="telefone"
+                    type="tel"
+                    placeholder="+351 ..."
+                    className="mt-1 border-white/20 bg-white/10 text-white placeholder:text-white/50 focus-visible:ring-white/30"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="mt-2 bg-[#00bcd4] px-10 py-5 text-sm font-medium uppercase tracking-widest text-white hover:bg-[#00acc1]"
                 >
-                  <option value="" disabled>Selecione…</option>
-                  <option value="manha">Manhã</option>
-                  <option value="tarde">Tarde</option>
-                  <option value="noite">Noite</option>
-                </select>
-              </div>
-              <div className="space-y-2 sm:col-span-2">
-                <Label htmlFor="mensagem">Mensagem *</Label>
-                <Textarea id="mensagem" name="mensagem" required rows={5} placeholder="Descreva o seu projeto ou necessidade..." />
-              </div>
+                  {loading ? "A enviar..." : "SUBMIT"}
+                </Button>
+              </form>
             </div>
 
-            <Button
-              type="submit"
-              size="lg"
-              disabled={loading}
-              className="mt-6 w-full bg-brand-gradient text-brand-foreground shadow-glow hover:opacity-90 sm:w-auto"
-            >
-              {loading ? "A enviar..." : <>Enviar Mensagem <Send className="h-4 w-4" /></>}
-            </Button>
-          </form>
+            {/* Right: Contact info */}
+            <div className="space-y-8 lg:pt-8">
+              <div>
+                <div className="mb-2 flex items-center gap-2 text-sm text-white/60">
+                  <Mail className="h-4 w-4" />
+                  <span>E-mail</span>
+                </div>
+                <p className="text-lg font-semibold text-white">contacto@azimuteit.pt</p>
+              </div>
+
+              <div>
+                <div className="mb-2 flex items-center gap-2 text-sm text-white/60">
+                  <Phone className="h-4 w-4" />
+                  <span>Telemóvel</span>
+                </div>
+                <p className="text-lg font-semibold text-white">967 642 199</p>
+              </div>
+
+              <div>
+                <div className="mb-2 flex items-center gap-2 text-sm text-white/60">
+                  <MapPin className="h-4 w-4" />
+                  <span>Endereço</span>
+                </div>
+                <p className="text-lg font-semibold leading-relaxed text-white">
+                  Rua Manuel Luis da Costa.<br />
+                  Costa da Caparica – Almada – Setúbal
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
       </section>
 
+      {/* Map section */}
       <section className="bg-background">
-        <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6 lg:px-8">
           <div className="overflow-hidden rounded-2xl border border-border shadow-elegant">
             <iframe
               title="Mapa Azimute IT"
