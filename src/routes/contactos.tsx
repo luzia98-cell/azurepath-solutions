@@ -55,7 +55,7 @@ function ContactPage() {
       </section>
 
       {/* Blue contact section */}
-      <section className="bg-[#2e3e9f] text-white">
+      <section className="bg-brand-gradient text-white">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Left: Form */}
