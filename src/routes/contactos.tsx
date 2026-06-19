@@ -134,7 +134,7 @@ function ContactPage() {
                 </div>
                 <p className="text-lg font-semibold leading-relaxed text-white">
                   Rua Manuel Luis da Costa.<br />
-                  Costa da Caparica – Almada – Setúbal
+                  Costa da Caparica - Almada - Setúbal.
                 </p>
               </div>
             </div>
