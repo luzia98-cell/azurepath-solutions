@@ -60,7 +60,7 @@ function ContactPage() {
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Left: Form */}
             <div>
-              <h2 className="mb-8 text-xl font-light">Liguem-me</h2>
+              <h2 className="mb-8 text-xl font-light">Envie-nos uma mensagem</h2>
               <form onSubmit={onSubmit} className="space-y-5">
                 <div>
                   <Label htmlFor="nome" className="text-sm font-normal text-white/80">
@@ -104,7 +104,7 @@ function ContactPage() {
                   disabled={loading}
                   className="mt-2 bg-[#00bcd4] px-10 py-5 text-sm font-medium uppercase tracking-widest text-white hover:bg-[#00acc1]"
                 >
-                  {loading ? "A enviar..." : "SUBMIT"}
+                  {loading ? "A enviar..." : "Enviar mensagem"}
                 </Button>
               </form>
             </div>
@@ -134,7 +134,7 @@ function ContactPage() {
                 </div>
                 <p className="text-lg font-semibold leading-relaxed text-white">
                   Rua Manuel Luis da Costa.<br />
-                  Costa da Caparica – Almada – Setúbal
+                  Costa da Caparica - Almada - Setúbal.
                 </p>
               </div>
             </div>
