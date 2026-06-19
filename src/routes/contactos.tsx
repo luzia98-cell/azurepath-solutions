@@ -104,7 +104,7 @@ function ContactPage() {
                   disabled={loading}
                   className="mt-2 bg-[#00bcd4] px-10 py-5 text-sm font-medium uppercase tracking-widest text-white hover:bg-[#00acc1]"
                 >
-                  {loading ? "A enviar..." : "SUBMIT"}
+                  {loading ? "A enviar..." : "Enviar mensagem"}
                 </Button>
               </form>
             </div>
