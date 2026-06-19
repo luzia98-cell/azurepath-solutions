@@ -60,7 +60,7 @@ function ContactPage() {
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Left: Form */}
             <div>
-              <h2 className="mb-8 text-xl font-light">Liguem-me</h2>
+              <h2 className="mb-8 text-xl font-light">Envie-nos uma mensagem</h2>
               <form onSubmit={onSubmit} className="space-y-5">
                 <div>
                   <Label htmlFor="nome" className="text-sm font-normal text-white/80">
