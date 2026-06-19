@@ -33,9 +33,9 @@ export function SiteFooter() {
         <div>
           <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide">Contactos</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-start gap-2"><Mail className="h-4 w-4 shrink-0 text-brand" /> geral@azimuteit.pt</li>
-            <li className="flex items-start gap-2"><Phone className="h-4 w-4 shrink-0 text-brand" /> +351 210 000 000</li>
-            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 shrink-0 text-brand" /> Portugal</li>
+            <li className="flex items-start gap-2"><Mail className="h-4 w-4 shrink-0 text-brand" /> contacto@azimuteit.pt</li>
+            <li className="flex items-start gap-2"><Phone className="h-4 w-4 shrink-0 text-brand" /> 967 642 199</li>
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 shrink-0 text-brand" /> Rua Manuel Luis da Costa.<br />Costa da Caparica - Almada - Setúbal.</li>
           </ul>
         </div>
       </div>
