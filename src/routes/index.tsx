@@ -1,9 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Network, Headphones, ShieldCheck, Radio, BrainCircuit,
-  CheckCircle2, ArrowRight, Sparkles, Bot, Cloud,
+  CheckCircle2, ArrowRight, Sparkles, Bot,
   Search, Lightbulb, Rocket, LifeBuoy, Quote, Award,
-  Users, Building2, Clock,
+  Building2, Clock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-tech.jpg";
