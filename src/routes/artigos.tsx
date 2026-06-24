@@ -1,6 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Clock, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import imgAi from "@/assets/articles/ai-start.jpg";
+import imgTraining from "@/assets/articles/training.jpg";
+import imgInfosec from "@/assets/articles/infosec.jpg";
+import imgDigital from "@/assets/articles/digital-transform.jpg";
+import imgCloud from "@/assets/articles/cloud-migration.jpg";
+import imgPhishing from "@/assets/articles/phishing.jpg";
+import imgBackup from "@/assets/articles/backup.jpg";
+import imgAutomation from "@/assets/articles/automation.jpg";
+import imgWifi from "@/assets/articles/wifi.jpg";
 
 export const Route = createFileRoute("/artigos")({
   head: () => ({
