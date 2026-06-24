@@ -44,7 +44,8 @@ export const Route = createFileRoute("/servicos/$slug")({
 });
 
 function ServicePage() {
-  const { service } = Route.useLoaderData();
+  const data = Route.useLoaderData() as { service: typeof services[number] };
+  const service = data.service;
   const Icon = service.icon;
   const related = services.filter((s) => s.slug !== service.slug).slice(0, 3);
 
