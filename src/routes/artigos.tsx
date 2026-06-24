@@ -187,7 +187,16 @@ function ArtigosPage() {
                 className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow"
               >
                 <div className="relative h-44 bg-hero-gradient">
-                  <div className="absolute inset-0 grid-bg-dark opacity-40" />
+                  <img
+                    src={a.image}
+                    alt={a.title}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="absolute inset-0 h-full w-full object-cover opacity-50 mix-blend-luminosity transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/40 to-brand/60" />
+                  <div className="absolute inset-0 grid-bg-dark opacity-30" />
                   <div className="absolute left-4 top-4 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">
                     {a.tag}
                   </div>
