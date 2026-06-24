@@ -1,6 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Clock, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import imgAi from "@/assets/articles/ai-start.jpg";
+import imgTraining from "@/assets/articles/training.jpg";
+import imgInfosec from "@/assets/articles/infosec.jpg";
+import imgDigital from "@/assets/articles/digital-transform.jpg";
+import imgCloud from "@/assets/articles/cloud-migration.jpg";
+import imgPhishing from "@/assets/articles/phishing.jpg";
+import imgBackup from "@/assets/articles/backup.jpg";
+import imgAutomation from "@/assets/articles/automation.jpg";
+import imgWifi from "@/assets/articles/wifi.jpg";
 
 export const Route = createFileRoute("/artigos")({
   head: () => ({
@@ -25,6 +34,7 @@ const featured = {
   tag: "Inteligência Artificial",
   date: "20 Jun 2026",
   read: "8 min",
+  image: imgAi,
 };
 
 const articles = [
@@ -34,6 +44,7 @@ const articles = [
     tag: "Formação",
     date: "12 Jun 2026",
     read: "4 min",
+    image: imgTraining,
   },
   {
     title: "O que é Segurança da Informação?",
@@ -41,6 +52,7 @@ const articles = [
     tag: "Cibersegurança",
     date: "05 Jun 2026",
     read: "6 min",
+    image: imgInfosec,
   },
   {
     title: "A tecnologia não é só uma aliada — é essencial",
@@ -48,6 +60,7 @@ const articles = [
     tag: "Transformação Digital",
     date: "28 Mai 2026",
     read: "5 min",
+    image: imgDigital,
   },
   {
     title: "Migrar para Microsoft 365: 7 passos essenciais",
@@ -55,6 +68,7 @@ const articles = [
     tag: "Cloud",
     date: "18 Mai 2026",
     read: "7 min",
+    image: imgCloud,
   },
   {
     title: "Phishing: como proteger a sua equipa",
@@ -62,6 +76,7 @@ const articles = [
     tag: "Cibersegurança",
     date: "10 Mai 2026",
     read: "6 min",
+    image: imgPhishing,
   },
   {
     title: "Backup 3-2-1: o seguro de vida dos seus dados",
@@ -69,6 +84,7 @@ const articles = [
     tag: "Cibersegurança",
     date: "02 Mai 2026",
     read: "5 min",
+    image: imgBackup,
   },
   {
     title: "Power Automate para PME: automatize sem código",
@@ -76,6 +92,7 @@ const articles = [
     tag: "Inteligência Artificial",
     date: "22 Abr 2026",
     read: "6 min",
+    image: imgAutomation,
   },
   {
     title: "Wi-Fi empresarial: o que ninguém lhe disse",
@@ -83,6 +100,7 @@ const articles = [
     tag: "Cloud",
     date: "14 Abr 2026",
     read: "5 min",
+    image: imgWifi,
   },
 ];
 
@@ -127,7 +145,16 @@ function ArtigosPage() {
         <div className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8">
           <article className="group grid overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:border-brand/40 hover:shadow-glow lg:grid-cols-2">
             <div className="relative min-h-64 bg-hero-gradient">
-              <div className="absolute inset-0 grid-bg-dark opacity-40" />
+              <img
+                src={featured.image}
+                alt={featured.title}
+                loading="lazy"
+                width={1024}
+                height={1024}
+                className="absolute inset-0 h-full w-full object-cover opacity-50 mix-blend-luminosity"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/40 to-brand/60" />
+              <div className="absolute inset-0 grid-bg-dark opacity-30" />
               <div className="absolute left-6 top-6 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">
                 Destaque
               </div>
@@ -160,7 +187,16 @@ function ArtigosPage() {
                 className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow"
               >
                 <div className="relative h-44 bg-hero-gradient">
-                  <div className="absolute inset-0 grid-bg-dark opacity-40" />
+                  <img
+                    src={a.image}
+                    alt={a.title}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="absolute inset-0 h-full w-full object-cover opacity-50 mix-blend-luminosity transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/40 to-brand/60" />
+                  <div className="absolute inset-0 grid-bg-dark opacity-30" />
                   <div className="absolute left-4 top-4 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">
                     {a.tag}
                   </div>
