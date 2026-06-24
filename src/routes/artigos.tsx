@@ -34,6 +34,7 @@ const featured = {
   tag: "Inteligência Artificial",
   date: "20 Jun 2026",
   read: "8 min",
+  image: imgAi,
 };
 
 const articles = [
@@ -43,6 +44,7 @@ const articles = [
     tag: "Formação",
     date: "12 Jun 2026",
     read: "4 min",
+    image: imgTraining,
   },
   {
     title: "O que é Segurança da Informação?",
@@ -50,6 +52,7 @@ const articles = [
     tag: "Cibersegurança",
     date: "05 Jun 2026",
     read: "6 min",
+    image: imgInfosec,
   },
   {
     title: "A tecnologia não é só uma aliada — é essencial",
@@ -57,6 +60,7 @@ const articles = [
     tag: "Transformação Digital",
     date: "28 Mai 2026",
     read: "5 min",
+    image: imgDigital,
   },
   {
     title: "Migrar para Microsoft 365: 7 passos essenciais",
@@ -64,6 +68,7 @@ const articles = [
     tag: "Cloud",
     date: "18 Mai 2026",
     read: "7 min",
+    image: imgCloud,
   },
   {
     title: "Phishing: como proteger a sua equipa",
@@ -71,6 +76,7 @@ const articles = [
     tag: "Cibersegurança",
     date: "10 Mai 2026",
     read: "6 min",
+    image: imgPhishing,
   },
   {
     title: "Backup 3-2-1: o seguro de vida dos seus dados",
@@ -78,6 +84,7 @@ const articles = [
     tag: "Cibersegurança",
     date: "02 Mai 2026",
     read: "5 min",
+    image: imgBackup,
   },
   {
     title: "Power Automate para PME: automatize sem código",
@@ -85,6 +92,7 @@ const articles = [
     tag: "Inteligência Artificial",
     date: "22 Abr 2026",
     read: "6 min",
+    image: imgAutomation,
   },
   {
     title: "Wi-Fi empresarial: o que ninguém lhe disse",
@@ -92,6 +100,7 @@ const articles = [
     tag: "Cloud",
     date: "14 Abr 2026",
     read: "5 min",
+    image: imgWifi,
   },
 ];
 
