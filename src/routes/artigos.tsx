@@ -145,7 +145,16 @@ function ArtigosPage() {
         <div className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8">
           <article className="group grid overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:border-brand/40 hover:shadow-glow lg:grid-cols-2">
             <div className="relative min-h-64 bg-hero-gradient">
-              <div className="absolute inset-0 grid-bg-dark opacity-40" />
+              <img
+                src={featured.image}
+                alt={featured.title}
+                loading="lazy"
+                width={1024}
+                height={1024}
+                className="absolute inset-0 h-full w-full object-cover opacity-50 mix-blend-luminosity"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/40 to-brand/60" />
+              <div className="absolute inset-0 grid-bg-dark opacity-30" />
               <div className="absolute left-6 top-6 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">
                 Destaque
               </div>
