@@ -1,9 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Network, Headphones, ShieldCheck, Radio, BrainCircuit,
-  CheckCircle2, ArrowRight, Sparkles, Bot, Cloud,
+  CheckCircle2, ArrowRight, Sparkles, Bot,
   Search, Lightbulb, Rocket, LifeBuoy, Quote, Award,
-  Users, Building2, Clock,
+  Building2, Clock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-tech.jpg";
@@ -23,14 +22,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const services = [
-  { icon: Network, title: "Redes Informáticas", desc: "Projeto, implementação e gestão de infraestruturas de rede seguras, escaláveis e de elevado desempenho." },
-  { icon: Headphones, title: "Apoio Informático", desc: "Equipa técnica certificada Microsoft para suporte remoto e presencial, resolução de incidentes e manutenção preventiva." },
-  { icon: ShieldCheck, title: "Cibersegurança", desc: "Proteção contra ameaças digitais com auditorias, monitorização, políticas de segurança e proteção de dados." },
-  { icon: Radio, title: "Telecomunicações", desc: "Soluções integradas de voz, dados e comunicações unificadas para escritórios e equipas distribuídas." },
-  { icon: BrainCircuit, title: "Inteligência Artificial", desc: "Assistentes virtuais e automação com IA para atendimento 24/7 e otimização de processos." },
-  { icon: Cloud, title: "Cloud & Servidores", desc: "Microsoft Azure, servidores físicos e virtuais, backup, recuperação e escalabilidade empresarial." },
-];
+import { services } from "@/lib/services-data";
 
 const reasons = [
   "Equipa certificada Microsoft",
@@ -177,21 +169,26 @@ function HomePage() {
           </div>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => (
-              <article
-                key={s.title}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow"
-              >
-                <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-brand-gradient shadow-glow">
-                  <s.icon className="h-6 w-6 text-brand-foreground" />
-                </div>
-                <h3 className="text-lg font-semibold text-navy">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-                <Link to="/contactos" className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand opacity-0 transition-opacity group-hover:opacity-100">
-                  Pedir informações <ArrowRight className="h-4 w-4" />
+            {services.map((s) => {
+              const SIcon = s.icon;
+              return (
+                <Link
+                  key={s.slug}
+                  to="/servicos/$slug"
+                  params={{ slug: s.slug }}
+                  className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow"
+                >
+                  <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-brand-gradient shadow-glow">
+                    <SIcon className="h-6 w-6 text-brand-foreground" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-navy">{s.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                    Saber mais <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </Link>
-              </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
