@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowRight, ArrowLeft, CheckCircle2, PlayCircle, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowLeft, CheckCircle2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getServiceBySlug, services } from "@/lib/services-data";
 
