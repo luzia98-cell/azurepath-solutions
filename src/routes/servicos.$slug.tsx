@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowRight, ArrowLeft, CheckCircle2, PlayCircle, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowLeft, CheckCircle2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getServiceBySlug, services } from "@/lib/services-data";
 
@@ -106,37 +106,23 @@ function ServicePage() {
         </div>
       </section>
 
-      {/* VIDEO / DEMO */}
+      {/* BENEFITS */}
       <section className="border-y border-border bg-surface">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Ver em ação</div>
-              <h2 className="mt-3 text-3xl font-bold text-navy sm:text-4xl">Demonstração</h2>
-              <p className="mt-4 text-muted-foreground">
-                Veja como a nossa solução de {service.title.toLowerCase()} funciona na prática e os
-                resultados que pode esperar para o seu negócio.
-              </p>
-              <ul className="mt-6 space-y-3">
-                {service.benefits.map((b) => (
-                  <li key={b} className="flex items-start gap-3 text-sm text-navy">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand" /> {b}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="group relative aspect-video overflow-hidden rounded-2xl border border-border bg-hero-gradient shadow-elegant">
-              <div className="absolute inset-0 grid-bg-dark opacity-40" />
-              <div className="absolute inset-0 grid place-items-center">
-                <div className="text-center text-white">
-                  <PlayCircle className="mx-auto h-20 w-20 opacity-90 transition-transform group-hover:scale-110" />
-                  <p className="mt-4 text-sm font-medium uppercase tracking-wider text-white/80">
-                    Vídeo em breve
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Vantagens</div>
+            <h2 className="mt-3 text-3xl font-bold text-navy sm:text-4xl">Benefícios para o seu negócio</h2>
+            <p className="mt-4 text-muted-foreground">
+              O que ganha ao trabalhar connosco em {service.title.toLowerCase()}.
+            </p>
           </div>
+          <ul className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
+            {service.benefits.map((b) => (
+              <li key={b} className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5 text-sm text-navy shadow-soft">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand" /> {b}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
