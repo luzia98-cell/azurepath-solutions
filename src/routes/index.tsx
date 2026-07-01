@@ -91,6 +91,16 @@ const faqs = [
   },
 ];
 
+const industries = [
+  { icon: Factory, name: "Indústria" },
+  { icon: HeartPulse, name: "Saúde" },
+  { icon: GraduationCap, name: "Educação" },
+  { icon: ShoppingBag, name: "Retalho" },
+  { icon: Scale, name: "Jurídico" },
+  { icon: Landmark, name: "Financeiro" },
+];
+
+
 function HomePage() {
   return (
     <>
