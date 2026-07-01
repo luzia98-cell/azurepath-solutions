@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   CheckCircle2, ArrowRight, Sparkles, Bot,
   Search, Lightbulb, Rocket, LifeBuoy, Quote, Award,
-  Building2, Clock,
+  Building2, Clock, Factory, HeartPulse, GraduationCap,
+  ShoppingBag, Scale, Landmark,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-tech.jpg";
