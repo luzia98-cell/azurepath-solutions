@@ -142,21 +142,27 @@ function HomePage() {
       </section>
 
       {/* STATS BAND */}
-      <section className="border-b border-border bg-surface">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
-          {stats.map((s) => (
-            <div key={s.l} className="flex items-center gap-4">
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-gradient shadow-glow">
-                <s.icon className="h-5 w-5 text-brand-foreground" />
+      <section className="relative overflow-hidden bg-hero-gradient text-white">
+        <div className="absolute inset-0 grid-bg-dark opacity-30" />
+        <div className="relative mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+          {stats.map((s, i) => (
+            <div
+              key={s.l}
+              className="flex items-center gap-4 animate-fade-up"
+              style={{ animationDelay: `${i * 90}ms` }}
+            >
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/10 backdrop-blur ring-1 ring-white/20 animate-pulse-glow">
+                <s.icon className="h-5 w-5 text-white" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-navy">{s.n}</div>
-                <div className="text-xs text-muted-foreground">{s.l}</div>
+                <div className="text-3xl font-bold text-white">{s.n}</div>
+                <div className="text-xs uppercase tracking-wider text-white/70">{s.l}</div>
               </div>
             </div>
           ))}
         </div>
       </section>
+
 
       {/* SERVICES */}
       <section id="servicos" className="bg-background">
