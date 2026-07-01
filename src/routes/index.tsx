@@ -226,17 +226,22 @@ function HomePage() {
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {process.map((p, idx) => (
-              <div key={p.title} className="relative rounded-2xl border border-border bg-card p-6 shadow-soft">
+              <div
+                key={p.title}
+                style={{ animationDelay: `${idx * 100}ms` }}
+                className="group relative rounded-2xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow animate-fade-up"
+              >
                 <div className="absolute -top-3 right-4 rounded-full bg-brand-gradient px-3 py-0.5 text-xs font-semibold text-white shadow-glow">
                   0{idx + 1}
                 </div>
-                <div className="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-brand/10">
+                <div className="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-brand/10 transition-transform group-hover:scale-110 group-hover:bg-brand/20">
                   <p.icon className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="font-semibold text-navy">{p.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
               </div>
             ))}
+
           </div>
         </div>
       </section>
