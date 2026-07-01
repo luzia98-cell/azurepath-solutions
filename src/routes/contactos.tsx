@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, Headphones, ShieldCheck, Zap, MessageSquare, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Headphones, ShieldCheck, Zap, MessageSquare, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -138,16 +138,6 @@ function ContactPage() {
                 </p>
               </div>
 
-              <div>
-                <div className="mb-2 flex items-center gap-2 text-sm text-white/60">
-                  <Clock className="h-4 w-4" />
-                  <span>Horário</span>
-                </div>
-                <p className="text-base font-medium leading-relaxed text-white">
-                  Segunda a Sexta · 09h00 — 18h00<br />
-                  <span className="text-sm text-white/70">Suporte de urgência disponível 7 dias por semana</span>
-                </p>
-              </div>
             </div>
           </div>
         </div>
