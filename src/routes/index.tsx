@@ -287,10 +287,39 @@ function HomePage() {
         </div>
       </section>
 
+      {/* INDUSTRIES */}
+      <section className="relative overflow-hidden bg-hero-gradient text-white">
+        <div className="absolute inset-0 grid-bg-dark opacity-30" />
+        <div className="absolute -top-32 left-1/4 h-64 w-64 rounded-full bg-brand/40 blur-3xl" />
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Setores</div>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Setores que servimos</h2>
+            <p className="mt-4 text-white/70">
+              Da indústria à saúde, adaptamos a tecnologia à realidade e regulamentação de cada área.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
+            {industries.map((it, i) => (
+              <div
+                key={it.name}
+                style={{ animationDelay: `${i * 70}ms` }}
+                className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition-all hover:-translate-y-1 hover:border-white/30 hover:bg-white/10 animate-fade-up"
+              >
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-white/10 ring-1 ring-white/20 transition-transform group-hover:scale-110">
+                  <it.icon className="h-6 w-6 text-white" />
+                </div>
+                <span className="text-sm font-medium text-white">{it.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WHY US */}
       <section className="border-y border-border bg-surface">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div>
+          <div className="animate-fade-up">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Porquê Azimute IT</div>
             <h2 className="mt-3 text-3xl font-bold text-navy sm:text-4xl">Porque Escolher-nos</h2>
             <p className="mt-4 max-w-lg text-muted-foreground">
@@ -299,8 +328,12 @@ function HomePage() {
             </p>
           </div>
           <ul className="grid gap-4 sm:grid-cols-2">
-            {reasons.map((r) => (
-              <li key={r} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-soft">
+            {reasons.map((r, i) => (
+              <li
+                key={r}
+                style={{ animationDelay: `${i * 60}ms` }}
+                className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-soft transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-glow animate-fade-up"
+              >
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
                 <span className="text-sm font-medium text-navy">{r}</span>
               </li>
@@ -309,19 +342,24 @@ function HomePage() {
         </div>
       </section>
 
-      {/* TECHNOLOGIES */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      {/* TECHNOLOGIES — dark band */}
+      <section className="relative overflow-hidden bg-hero-gradient text-white">
+        <div className="absolute inset-0 grid-bg-dark opacity-30" />
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Stack tecnológica</div>
-            <h2 className="mt-3 text-3xl font-bold text-navy sm:text-4xl">Tecnologias que dominamos</h2>
-            <p className="mt-4 text-muted-foreground">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Stack tecnológica</div>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Tecnologias que dominamos</h2>
+            <p className="mt-4 text-white/70">
               Trabalhamos com as plataformas líderes do mercado para garantir fiabilidade e desempenho.
             </p>
           </div>
           <div className="mt-12 flex flex-wrap justify-center gap-3">
-            {technologies.map((t) => (
-              <span key={t} className="rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-navy shadow-soft transition-all hover:border-brand/40 hover:shadow-glow">
+            {technologies.map((t, i) => (
+              <span
+                key={t}
+                style={{ animationDelay: `${i * 40}ms` }}
+                className="rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur transition-all hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20 animate-fade-up"
+              >
                 {t}
               </span>
             ))}
@@ -330,17 +368,26 @@ function HomePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="border-y border-border bg-surface">
+      <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Testemunhos</div>
             <h2 className="mt-3 text-3xl font-bold text-navy sm:text-4xl">O que dizem os nossos clientes</h2>
+            <p className="mt-4 text-muted-foreground">
+              A confiança dos nossos clientes é a nossa maior conquista.
+            </p>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <figure key={t.name} className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-soft">
-                <Quote className="h-6 w-6 text-brand" />
-                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-navy">
+            {testimonials.map((t, i) => (
+              <figure
+                key={t.name}
+                style={{ animationDelay: `${i * 120}ms` }}
+                className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-elegant animate-fade-up"
+              >
+                <div className="absolute -top-3 left-6 grid h-10 w-10 place-items-center rounded-full bg-brand-gradient shadow-glow">
+                  <Quote className="h-4 w-4 text-white" />
+                </div>
+                <blockquote className="mt-6 flex-1 text-sm leading-relaxed text-navy">
                   "{t.quote}"
                 </blockquote>
                 <figcaption className="mt-6 border-t border-border pt-4">
@@ -352,6 +399,8 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+
 
       {/* FAQ */}
       <section className="bg-background">
