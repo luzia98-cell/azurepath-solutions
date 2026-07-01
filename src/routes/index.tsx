@@ -186,27 +186,30 @@ function HomePage() {
           </div>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => {
+            {services.map((s, i) => {
               const SIcon = s.icon;
               return (
                 <Link
                   key={s.slug}
                   to="/servicos/$slug"
                   params={{ slug: s.slug }}
-                  className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow"
+                  style={{ animationDelay: `${i * 80}ms` }}
+                  className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-2 hover:border-brand/50 hover:shadow-glow animate-fade-up"
                 >
-                  <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-brand-gradient shadow-glow">
+                  <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand/10 blur-3xl transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
+                  <div className="relative mb-5 grid h-12 w-12 place-items-center rounded-xl bg-brand-gradient shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                     <SIcon className="h-6 w-6 text-brand-foreground" />
                   </div>
-                  <h3 className="text-lg font-semibold text-navy">{s.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                  <h3 className="relative text-lg font-semibold text-navy">{s.title}</h3>
+                  <p className="relative mt-2 text-sm text-muted-foreground">{s.desc}</p>
+                  <span className="relative mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
                     Saber mais <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </Link>
               );
             })}
           </div>
+
         </div>
       </section>
 
