@@ -197,10 +197,11 @@ function ArtigosPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {articles.map((a) => (
+            {articles.map((a, i) => (
               <article
                 key={a.title}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow"
+                style={{ animationDelay: `${i * 80}ms` }}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:-translate-y-2 hover:border-brand/40 hover:shadow-glow animate-fade-up"
               >
                 <div className="relative h-44 bg-hero-gradient">
                   <img
