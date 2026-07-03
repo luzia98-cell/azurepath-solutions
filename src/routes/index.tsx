@@ -105,8 +105,27 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-hero-gradient text-white">
+      <section className="relative overflow-hidden animated-gradient text-white">
         <div className="absolute inset-0 grid-bg-dark opacity-40" />
+        {/* Animated blobs */}
+        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-brand/40 blur-3xl animate-blob" />
+        <div className="pointer-events-none absolute top-1/3 -right-32 h-[28rem] w-[28rem] rounded-full bg-[oklch(0.55_0.2_260)]/30 blur-3xl animate-blob-slow" />
+        <div className="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-brand-glow/25 blur-3xl animate-blob" style={{ animationDelay: "4s" }} />
+        {/* Floating particles */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          {Array.from({ length: 14 }).map((_, i) => (
+            <span
+              key={i}
+              className="absolute block h-1.5 w-1.5 rounded-full bg-white/40 animate-drift"
+              style={{
+                left: `${(i * 7.3) % 100}%`,
+                bottom: `-${(i * 3) % 40}px`,
+                animationDelay: `${(i * 1.3) % 12}s`,
+                animationDuration: `${14 + (i % 6)}s`,
+              }}
+            />
+          ))}
+        </div>
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-28">
           <div className="flex flex-col justify-center animate-fade-up">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-white">
