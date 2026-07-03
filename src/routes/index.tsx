@@ -158,13 +158,14 @@ function HomePage() {
             </div>
           </div>
           <div className="relative animate-fade-up">
-            <div className="absolute -inset-4 rounded-3xl bg-brand-gradient opacity-30 blur-3xl" />
+            <div className="absolute -inset-4 rounded-3xl bg-brand-gradient opacity-30 blur-3xl animate-pulse-glow" />
+            <div className="pointer-events-none absolute -inset-6 rounded-3xl border border-white/10 animate-spin-slow" />
             <img
               src={heroImg}
               alt="Soluções em tecnologia, cloud e inteligência artificial"
               width={1920}
               height={1080}
-              className="relative rounded-2xl border border-white/10 shadow-elegant"
+              className="relative rounded-2xl border border-white/10 shadow-elegant animate-float"
             />
           </div>
         </div>
