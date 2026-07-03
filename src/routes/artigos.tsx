@@ -159,7 +159,7 @@ function ArtigosPage() {
       {/* Destaque */}
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8">
-          <article className="group grid overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:border-brand/40 hover:shadow-glow lg:grid-cols-2">
+          <article className="group grid overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:border-brand/40 hover:shadow-glow lg:grid-cols-2 animate-fade-up">
             <div className="relative min-h-64 bg-hero-gradient">
               <img
                 src={featured.image}
