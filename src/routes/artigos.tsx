@@ -238,8 +238,10 @@ function ArtigosPage() {
       {/* Newsletter */}
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-hero-gradient p-10 text-white shadow-elegant sm:p-14">
+          <div className="relative overflow-hidden rounded-3xl animated-gradient p-10 text-white shadow-elegant sm:p-14">
             <div className="absolute inset-0 grid-bg-dark opacity-40" />
+            <div className="pointer-events-none absolute -top-16 -left-16 h-64 w-64 rounded-full bg-brand/40 blur-3xl animate-blob" />
+            <div className="pointer-events-none absolute -bottom-16 -right-16 h-72 w-72 rounded-full bg-brand-glow/30 blur-3xl animate-blob-slow" />
             <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wider">
