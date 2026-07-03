@@ -105,8 +105,27 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-hero-gradient text-white">
+      <section className="relative overflow-hidden animated-gradient text-white">
         <div className="absolute inset-0 grid-bg-dark opacity-40" />
+        {/* Animated blobs */}
+        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-brand/40 blur-3xl animate-blob" />
+        <div className="pointer-events-none absolute top-1/3 -right-32 h-[28rem] w-[28rem] rounded-full bg-[oklch(0.55_0.2_260)]/30 blur-3xl animate-blob-slow" />
+        <div className="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-brand-glow/25 blur-3xl animate-blob" style={{ animationDelay: "4s" }} />
+        {/* Floating particles */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          {Array.from({ length: 14 }).map((_, i) => (
+            <span
+              key={i}
+              className="absolute block h-1.5 w-1.5 rounded-full bg-white/40 animate-drift"
+              style={{
+                left: `${(i * 7.3) % 100}%`,
+                bottom: `-${(i * 3) % 40}px`,
+                animationDelay: `${(i * 1.3) % 12}s`,
+                animationDuration: `${14 + (i % 6)}s`,
+              }}
+            />
+          ))}
+        </div>
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-28">
           <div className="flex flex-col justify-center animate-fade-up">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-white">
@@ -139,13 +158,14 @@ function HomePage() {
             </div>
           </div>
           <div className="relative animate-fade-up">
-            <div className="absolute -inset-4 rounded-3xl bg-brand-gradient opacity-30 blur-3xl" />
+            <div className="absolute -inset-4 rounded-3xl bg-brand-gradient opacity-30 blur-3xl animate-pulse-glow" />
+            <div className="pointer-events-none absolute -inset-6 rounded-3xl border border-white/10 animate-spin-slow" />
             <img
               src={heroImg}
               alt="Soluções em tecnologia, cloud e inteligência artificial"
               width={1920}
               height={1080}
-              className="relative rounded-2xl border border-white/10 shadow-elegant"
+              className="relative rounded-2xl border border-white/10 shadow-elegant animate-float"
             />
           </div>
         </div>
@@ -293,9 +313,10 @@ function HomePage() {
       </section>
 
       {/* INDUSTRIES */}
-      <section className="relative overflow-hidden bg-hero-gradient text-white">
+      <section className="relative overflow-hidden animated-gradient text-white">
         <div className="absolute inset-0 grid-bg-dark opacity-30" />
-        <div className="absolute -top-32 left-1/4 h-64 w-64 rounded-full bg-brand/40 blur-3xl" />
+        <div className="pointer-events-none absolute -top-32 left-1/4 h-64 w-64 rounded-full bg-brand/40 blur-3xl animate-blob" />
+        <div className="pointer-events-none absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-brand-glow/30 blur-3xl animate-blob-slow" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Setores</div>
@@ -348,8 +369,9 @@ function HomePage() {
       </section>
 
       {/* TECHNOLOGIES — dark band */}
-      <section className="relative overflow-hidden bg-hero-gradient text-white">
+      <section className="relative overflow-hidden animated-gradient text-white">
         <div className="absolute inset-0 grid-bg-dark opacity-30" />
+        <div className="pointer-events-none absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/20 blur-3xl animate-blob-slow" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Stack tecnológica</div>
@@ -358,16 +380,17 @@ function HomePage() {
               Trabalhamos com as plataformas líderes do mercado para garantir fiabilidade e desempenho.
             </p>
           </div>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-            {technologies.map((t, i) => (
-              <span
-                key={t}
-                style={{ animationDelay: `${i * 40}ms` }}
-                className="rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur transition-all hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20 animate-fade-up"
-              >
-                {t}
-              </span>
-            ))}
+          <div className="mt-12 marquee-mask overflow-hidden">
+            <div className="flex w-max gap-3 animate-marquee">
+              {[...technologies, ...technologies].map((t, i) => (
+                <span
+                  key={`${t}-${i}`}
+                  className="shrink-0 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur transition-all hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
