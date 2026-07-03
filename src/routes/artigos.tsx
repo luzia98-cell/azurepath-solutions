@@ -107,9 +107,25 @@ const articles = [
 function ArtigosPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-hero-gradient text-white">
+      <section className="relative overflow-hidden animated-gradient text-white">
         <div className="absolute inset-0 grid-bg-dark opacity-30" />
-        <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
+        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-brand/40 blur-3xl animate-blob" />
+        <div className="pointer-events-none absolute -bottom-24 -right-24 h-[28rem] w-[28rem] rounded-full bg-brand-glow/25 blur-3xl animate-blob-slow" />
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <span
+              key={i}
+              className="absolute block h-1.5 w-1.5 rounded-full bg-white/40 animate-drift"
+              style={{
+                left: `${(i * 8.7) % 100}%`,
+                bottom: `-${(i * 4) % 40}px`,
+                animationDelay: `${(i * 1.5) % 12}s`,
+                animationDuration: `${14 + (i % 6)}s`,
+              }}
+            />
+          ))}
+        </div>
+        <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8 animate-fade-up">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Blog</div>
           <h1 className="mt-3 text-4xl font-bold uppercase sm:text-5xl">
             Últimas <span className="bg-gradient-to-r from-[oklch(0.85_0.12_220)] to-white bg-clip-text text-transparent">Notícias</span>
@@ -143,7 +159,7 @@ function ArtigosPage() {
       {/* Destaque */}
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8">
-          <article className="group grid overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:border-brand/40 hover:shadow-glow lg:grid-cols-2">
+          <article className="group grid overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:border-brand/40 hover:shadow-glow lg:grid-cols-2 animate-fade-up">
             <div className="relative min-h-64 bg-hero-gradient">
               <img
                 src={featured.image}
@@ -181,10 +197,11 @@ function ArtigosPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {articles.map((a) => (
+            {articles.map((a, i) => (
               <article
                 key={a.title}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow"
+                style={{ animationDelay: `${i * 80}ms` }}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:-translate-y-2 hover:border-brand/40 hover:shadow-glow animate-fade-up"
               >
                 <div className="relative h-44 bg-hero-gradient">
                   <img
@@ -221,8 +238,10 @@ function ArtigosPage() {
       {/* Newsletter */}
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-hero-gradient p-10 text-white shadow-elegant sm:p-14">
+          <div className="relative overflow-hidden rounded-3xl animated-gradient p-10 text-white shadow-elegant sm:p-14">
             <div className="absolute inset-0 grid-bg-dark opacity-40" />
+            <div className="pointer-events-none absolute -top-16 -left-16 h-64 w-64 rounded-full bg-brand/40 blur-3xl animate-blob" />
+            <div className="pointer-events-none absolute -bottom-16 -right-16 h-72 w-72 rounded-full bg-brand-glow/30 blur-3xl animate-blob-slow" />
             <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wider">
