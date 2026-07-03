@@ -107,9 +107,25 @@ const articles = [
 function ArtigosPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-hero-gradient text-white">
+      <section className="relative overflow-hidden animated-gradient text-white">
         <div className="absolute inset-0 grid-bg-dark opacity-30" />
-        <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
+        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-brand/40 blur-3xl animate-blob" />
+        <div className="pointer-events-none absolute -bottom-24 -right-24 h-[28rem] w-[28rem] rounded-full bg-brand-glow/25 blur-3xl animate-blob-slow" />
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <span
+              key={i}
+              className="absolute block h-1.5 w-1.5 rounded-full bg-white/40 animate-drift"
+              style={{
+                left: `${(i * 8.7) % 100}%`,
+                bottom: `-${(i * 4) % 40}px`,
+                animationDelay: `${(i * 1.5) % 12}s`,
+                animationDuration: `${14 + (i % 6)}s`,
+              }}
+            />
+          ))}
+        </div>
+        <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8 animate-fade-up">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Blog</div>
           <h1 className="mt-3 text-4xl font-bold uppercase sm:text-5xl">
             Últimas <span className="bg-gradient-to-r from-[oklch(0.85_0.12_220)] to-white bg-clip-text text-transparent">Notícias</span>
