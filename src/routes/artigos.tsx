@@ -203,16 +203,18 @@ function ArtigosPage() {
                 style={{ animationDelay: `${i * 80}ms` }}
                 className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:-translate-y-2 hover:border-brand/40 hover:shadow-glow animate-fade-up"
               >
-                <div className="relative h-44 bg-hero-gradient">
+                <div className="relative h-44 overflow-hidden bg-hero-gradient">
                   <img
                     src={a.image}
                     alt={a.title}
                     loading="lazy"
                     width={1024}
                     height={1024}
-                    className="absolute inset-0 h-full w-full object-cover opacity-50 mix-blend-luminosity transition-transform duration-500 group-hover:scale-105"
+                    className="absolute inset-0 h-full w-full object-cover opacity-50 mix-blend-luminosity transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/40 to-brand/60" />
+                  <div className="pointer-events-none absolute -top-8 -right-8 h-32 w-32 rounded-full bg-brand/40 blur-2xl animate-blob" style={{ animationDelay: `${i * 0.8}s` }} />
+                  <div className="pointer-events-none absolute -bottom-8 -left-8 h-24 w-24 rounded-full bg-brand-glow/30 blur-2xl animate-blob-slow" style={{ animationDelay: `${i * 0.6}s` }} />
                   <div className="absolute inset-0 grid-bg-dark opacity-30" />
                   <div className="absolute left-4 top-4 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">
                     {a.tag}
