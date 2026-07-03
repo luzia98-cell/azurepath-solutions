@@ -379,16 +379,17 @@ function HomePage() {
               Trabalhamos com as plataformas líderes do mercado para garantir fiabilidade e desempenho.
             </p>
           </div>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-            {technologies.map((t, i) => (
-              <span
-                key={t}
-                style={{ animationDelay: `${i * 40}ms` }}
-                className="rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur transition-all hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20 animate-fade-up"
-              >
-                {t}
-              </span>
-            ))}
+          <div className="mt-12 marquee-mask overflow-hidden">
+            <div className="flex w-max gap-3 animate-marquee">
+              {[...technologies, ...technologies].map((t, i) => (
+                <span
+                  key={`${t}-${i}`}
+                  className="shrink-0 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur transition-all hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
