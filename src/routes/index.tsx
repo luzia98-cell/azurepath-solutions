@@ -369,8 +369,9 @@ function HomePage() {
       </section>
 
       {/* TECHNOLOGIES — dark band */}
-      <section className="relative overflow-hidden bg-hero-gradient text-white">
+      <section className="relative overflow-hidden animated-gradient text-white">
         <div className="absolute inset-0 grid-bg-dark opacity-30" />
+        <div className="pointer-events-none absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/20 blur-3xl animate-blob-slow" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Stack tecnológica</div>
