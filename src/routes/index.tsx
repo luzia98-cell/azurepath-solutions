@@ -313,9 +313,10 @@ function HomePage() {
       </section>
 
       {/* INDUSTRIES */}
-      <section className="relative overflow-hidden bg-hero-gradient text-white">
+      <section className="relative overflow-hidden animated-gradient text-white">
         <div className="absolute inset-0 grid-bg-dark opacity-30" />
-        <div className="absolute -top-32 left-1/4 h-64 w-64 rounded-full bg-brand/40 blur-3xl" />
+        <div className="pointer-events-none absolute -top-32 left-1/4 h-64 w-64 rounded-full bg-brand/40 blur-3xl animate-blob" />
+        <div className="pointer-events-none absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-brand-glow/30 blur-3xl animate-blob-slow" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Setores</div>
