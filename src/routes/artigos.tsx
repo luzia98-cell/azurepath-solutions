@@ -35,6 +35,7 @@ function ArtigosPage() {
   ];
 
   const featured = {
+    slug: "ia-nas-pme-por-onde-comecar",
     title: t("art.f.title"),
     excerpt: t("art.f.excerpt"),
     tag: t("art.cat.ai"),
@@ -44,8 +45,8 @@ function ArtigosPage() {
   };
 
   const articles = [
-    { title: t("art.a1.title"), excerpt: t("art.a1.excerpt"), tag: t("art.cat.training"), date: "12 Jun 2026", read: "4 min", image: imgTraining },
-    { title: t("art.a2.title"), excerpt: t("art.a2.excerpt"), tag: t("art.cat.sec"), date: "05 Jun 2026", read: "6 min", image: imgInfosec },
+    { slug: "aulas-particulares-de-informatica", title: t("art.a1.title"), excerpt: t("art.a1.excerpt"), tag: t("art.cat.training"), date: "12 Jun 2026", read: "4 min", image: imgTraining },
+    { slug: "o-que-e-seguranca-da-informacao", title: t("art.a2.title"), excerpt: t("art.a2.excerpt"), tag: t("art.cat.sec"), date: "05 Jun 2026", read: "6 min", image: imgInfosec },
     { title: t("art.a3.title"), excerpt: t("art.a3.excerpt"), tag: t("art.cat.digital"), date: "28 Mai 2026", read: "5 min", image: imgDigital },
     { title: t("art.a4.title"), excerpt: t("art.a4.excerpt"), tag: t("art.cat.cloud"), date: "18 Mai 2026", read: "7 min", image: imgCloud },
     { title: t("art.a5.title"), excerpt: t("art.a5.excerpt"), tag: t("art.cat.sec"), date: "10 Mai 2026", read: "6 min", image: imgPhishing },
