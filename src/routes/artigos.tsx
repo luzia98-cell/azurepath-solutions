@@ -47,12 +47,12 @@ function ArtigosPage() {
   const articles = [
     { slug: "aulas-particulares-de-informatica", title: t("art.a1.title"), excerpt: t("art.a1.excerpt"), tag: t("art.cat.training"), date: "12 Jun 2026", read: "4 min", image: imgTraining },
     { slug: "o-que-e-seguranca-da-informacao", title: t("art.a2.title"), excerpt: t("art.a2.excerpt"), tag: t("art.cat.sec"), date: "05 Jun 2026", read: "6 min", image: imgInfosec },
-    { title: t("art.a3.title"), excerpt: t("art.a3.excerpt"), tag: t("art.cat.digital"), date: "28 Mai 2026", read: "5 min", image: imgDigital },
-    { title: t("art.a4.title"), excerpt: t("art.a4.excerpt"), tag: t("art.cat.cloud"), date: "18 Mai 2026", read: "7 min", image: imgCloud },
-    { title: t("art.a5.title"), excerpt: t("art.a5.excerpt"), tag: t("art.cat.sec"), date: "10 Mai 2026", read: "6 min", image: imgPhishing },
-    { title: t("art.a6.title"), excerpt: t("art.a6.excerpt"), tag: t("art.cat.sec"), date: "02 Mai 2026", read: "5 min", image: imgBackup },
-    { title: t("art.a7.title"), excerpt: t("art.a7.excerpt"), tag: t("art.cat.ai"), date: "22 Abr 2026", read: "6 min", image: imgAutomation },
-    { title: t("art.a8.title"), excerpt: t("art.a8.excerpt"), tag: t("art.cat.cloud"), date: "14 Abr 2026", read: "5 min", image: imgWifi },
+    { slug: "tecnologia-e-essencial", title: t("art.a3.title"), excerpt: t("art.a3.excerpt"), tag: t("art.cat.digital"), date: "28 Mai 2026", read: "5 min", image: imgDigital },
+    { slug: "migrar-para-microsoft-365", title: t("art.a4.title"), excerpt: t("art.a4.excerpt"), tag: t("art.cat.cloud"), date: "18 Mai 2026", read: "7 min", image: imgCloud },
+    { slug: "phishing-como-proteger-a-equipa", title: t("art.a5.title"), excerpt: t("art.a5.excerpt"), tag: t("art.cat.sec"), date: "10 Mai 2026", read: "6 min", image: imgPhishing },
+    { slug: "backup-3-2-1", title: t("art.a6.title"), excerpt: t("art.a6.excerpt"), tag: t("art.cat.sec"), date: "02 Mai 2026", read: "5 min", image: imgBackup },
+    { slug: "power-automate-para-pme", title: t("art.a7.title"), excerpt: t("art.a7.excerpt"), tag: t("art.cat.ai"), date: "22 Abr 2026", read: "6 min", image: imgAutomation },
+    { slug: "wifi-empresarial", title: t("art.a8.title"), excerpt: t("art.a8.excerpt"), tag: t("art.cat.cloud"), date: "14 Abr 2026", read: "5 min", image: imgWifi },
   ];
 
   return (
