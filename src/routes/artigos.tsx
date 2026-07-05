@@ -35,6 +35,7 @@ function ArtigosPage() {
   ];
 
   const featured = {
+    slug: "ia-nas-pme-por-onde-comecar",
     title: t("art.f.title"),
     excerpt: t("art.f.excerpt"),
     tag: t("art.cat.ai"),
@@ -44,14 +45,14 @@ function ArtigosPage() {
   };
 
   const articles = [
-    { title: t("art.a1.title"), excerpt: t("art.a1.excerpt"), tag: t("art.cat.training"), date: "12 Jun 2026", read: "4 min", image: imgTraining },
-    { title: t("art.a2.title"), excerpt: t("art.a2.excerpt"), tag: t("art.cat.sec"), date: "05 Jun 2026", read: "6 min", image: imgInfosec },
-    { title: t("art.a3.title"), excerpt: t("art.a3.excerpt"), tag: t("art.cat.digital"), date: "28 Mai 2026", read: "5 min", image: imgDigital },
-    { title: t("art.a4.title"), excerpt: t("art.a4.excerpt"), tag: t("art.cat.cloud"), date: "18 Mai 2026", read: "7 min", image: imgCloud },
-    { title: t("art.a5.title"), excerpt: t("art.a5.excerpt"), tag: t("art.cat.sec"), date: "10 Mai 2026", read: "6 min", image: imgPhishing },
-    { title: t("art.a6.title"), excerpt: t("art.a6.excerpt"), tag: t("art.cat.sec"), date: "02 Mai 2026", read: "5 min", image: imgBackup },
-    { title: t("art.a7.title"), excerpt: t("art.a7.excerpt"), tag: t("art.cat.ai"), date: "22 Abr 2026", read: "6 min", image: imgAutomation },
-    { title: t("art.a8.title"), excerpt: t("art.a8.excerpt"), tag: t("art.cat.cloud"), date: "14 Abr 2026", read: "5 min", image: imgWifi },
+    { slug: "aulas-particulares-de-informatica", title: t("art.a1.title"), excerpt: t("art.a1.excerpt"), tag: t("art.cat.training"), date: "12 Jun 2026", read: "4 min", image: imgTraining },
+    { slug: "o-que-e-seguranca-da-informacao", title: t("art.a2.title"), excerpt: t("art.a2.excerpt"), tag: t("art.cat.sec"), date: "05 Jun 2026", read: "6 min", image: imgInfosec },
+    { slug: "tecnologia-e-essencial", title: t("art.a3.title"), excerpt: t("art.a3.excerpt"), tag: t("art.cat.digital"), date: "28 Mai 2026", read: "5 min", image: imgDigital },
+    { slug: "migrar-para-microsoft-365", title: t("art.a4.title"), excerpt: t("art.a4.excerpt"), tag: t("art.cat.cloud"), date: "18 Mai 2026", read: "7 min", image: imgCloud },
+    { slug: "phishing-como-proteger-a-equipa", title: t("art.a5.title"), excerpt: t("art.a5.excerpt"), tag: t("art.cat.sec"), date: "10 Mai 2026", read: "6 min", image: imgPhishing },
+    { slug: "backup-3-2-1", title: t("art.a6.title"), excerpt: t("art.a6.excerpt"), tag: t("art.cat.sec"), date: "02 Mai 2026", read: "5 min", image: imgBackup },
+    { slug: "power-automate-para-pme", title: t("art.a7.title"), excerpt: t("art.a7.excerpt"), tag: t("art.cat.ai"), date: "22 Abr 2026", read: "6 min", image: imgAutomation },
+    { slug: "wifi-empresarial", title: t("art.a8.title"), excerpt: t("art.a8.excerpt"), tag: t("art.cat.cloud"), date: "14 Abr 2026", read: "5 min", image: imgWifi },
   ];
 
   return (
@@ -111,7 +112,7 @@ function ArtigosPage() {
                 <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" /> {featured.date}</span>
                 <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" /> {featured.read}</span>
               </div>
-              <Link to="/contactos" className="mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-brand hover:opacity-80">
+              <Link to="/artigos/$slug" params={{ slug: featured.slug }} className="mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-brand hover:opacity-80">
                 {t("art.readFull")} <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -141,7 +142,7 @@ function ArtigosPage() {
                     <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" /> {a.date}</span>
                     <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" /> {a.read}</span>
                   </div>
-                  <Link to="/contactos" className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:opacity-80">
+                  <Link to="/artigos/$slug" params={{ slug: a.slug }} className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:opacity-80">
                     {t("art.readMore")} <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
