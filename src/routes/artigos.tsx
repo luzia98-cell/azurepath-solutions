@@ -142,7 +142,7 @@ function ArtigosPage() {
                     <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" /> {a.date}</span>
                     <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" /> {a.read}</span>
                   </div>
-                  <Link to="/contactos" className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:opacity-80">
+                  <Link to="/artigos/$slug" params={{ slug: a.slug }} className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:opacity-80">
                     {t("art.readMore")} <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
