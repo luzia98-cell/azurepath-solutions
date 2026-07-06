@@ -12,7 +12,7 @@ import imgAutomation from "@/assets/articles/automation.jpg";
 import imgWifi from "@/assets/articles/wifi.jpg";
 import { useT } from "@/lib/i18n";
 
-export const Route = createFileRoute("/artigos")({
+export const Route = createFileRoute("/artigos/")({
   head: () => ({
     meta: [
       { title: "Artigos — Azimute IT | Tecnologia, IA e Cibersegurança" },
