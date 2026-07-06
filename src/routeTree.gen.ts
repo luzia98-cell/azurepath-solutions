@@ -14,6 +14,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ContactosRouteImport } from './routes/contactos'
 import { Route as ArtigosRouteImport } from './routes/artigos'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArtigosIndexRouteImport } from './routes/artigos.index'
 import { Route as ServicosSlugRouteImport } from './routes/servicos.$slug'
 import { Route as ArtigosSlugRouteImport } from './routes/artigos.$slug'
 
@@ -42,6 +43,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArtigosIndexRoute = ArtigosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ArtigosRoute,
+} as any)
 const ServicosSlugRoute = ServicosSlugRouteImport.update({
   id: '/servicos/$slug',
   path: '/servicos/$slug',
@@ -61,15 +67,16 @@ export interface FileRoutesByFullPath {
   '/sobre': typeof SobreRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/artigos/': typeof ArtigosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/artigos': typeof ArtigosRouteWithChildren
   '/contactos': typeof ContactosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/artigos': typeof ArtigosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +87,7 @@ export interface FileRoutesById {
   '/sobre': typeof SobreRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/servicos/$slug': typeof ServicosSlugRoute
+  '/artigos/': typeof ArtigosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,15 +99,16 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/artigos/$slug'
     | '/servicos/$slug'
+    | '/artigos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/artigos'
     | '/contactos'
     | '/sitemap.xml'
     | '/sobre'
     | '/artigos/$slug'
     | '/servicos/$slug'
+    | '/artigos'
   id:
     | '__root__'
     | '/'
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/artigos/$slug'
     | '/servicos/$slug'
+    | '/artigos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -157,6 +167,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/artigos/': {
+      id: '/artigos/'
+      path: '/'
+      fullPath: '/artigos/'
+      preLoaderRoute: typeof ArtigosIndexRouteImport
+      parentRoute: typeof ArtigosRoute
+    }
     '/servicos/$slug': {
       id: '/servicos/$slug'
       path: '/servicos/$slug'
@@ -176,10 +193,12 @@ declare module '@tanstack/react-router' {
 
 interface ArtigosRouteChildren {
   ArtigosSlugRoute: typeof ArtigosSlugRoute
+  ArtigosIndexRoute: typeof ArtigosIndexRoute
 }
 
 const ArtigosRouteChildren: ArtigosRouteChildren = {
   ArtigosSlugRoute: ArtigosSlugRoute,
+  ArtigosIndexRoute: ArtigosIndexRoute,
 }
 
 const ArtigosRouteWithChildren =
