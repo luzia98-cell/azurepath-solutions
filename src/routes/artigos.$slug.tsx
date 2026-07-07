@@ -92,7 +92,8 @@ function renderInline(text: string): React.ReactNode {
 
 function ArticlePage() {
   const { article } = Route.useLoaderData();
-  const { t } = useT();
+  const { t, lang } = useT();
+  const localizedBody = getLocalizedBody(article.slug, lang, article.body);
   const idx = articles.findIndex((a) => a.slug === article.slug);
   const next = articles[(idx + 1) % articles.length];
 
