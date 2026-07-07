@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Calendar, Clock } from "lucide-react";
 import { articleBySlug, articles } from "@/lib/articles-data";
+import { getLocalizedBody } from "@/lib/articles-translations";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/artigos/$slug")({
