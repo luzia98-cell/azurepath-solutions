@@ -136,7 +136,7 @@ function ArticlePage() {
 
       <article className="bg-background">
         <div className="mx-auto max-w-3xl px-4 pb-12 sm:px-6 lg:px-8">
-          <div className="prose-lg text-base sm:text-lg">{renderBody(article.body)}</div>
+          <div className="prose-lg text-base sm:text-lg">{renderBody(localizedBody)}</div>
         </div>
       </article>
 
