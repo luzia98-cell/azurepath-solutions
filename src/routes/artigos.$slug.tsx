@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Calendar, Clock } from "lucide-react";
 import { articleBySlug, articles } from "@/lib/articles-data";
+import { getLocalizedBody } from "@/lib/articles-translations";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/artigos/$slug")({
@@ -91,7 +92,8 @@ function renderInline(text: string): React.ReactNode {
 
 function ArticlePage() {
   const { article } = Route.useLoaderData();
-  const { t } = useT();
+  const { t, lang } = useT();
+  const localizedBody = getLocalizedBody(article.slug, lang, article.body);
   const idx = articles.findIndex((a) => a.slug === article.slug);
   const next = articles[(idx + 1) % articles.length];
 
@@ -134,7 +136,7 @@ function ArticlePage() {
 
       <article className="bg-background">
         <div className="mx-auto max-w-3xl px-4 pb-12 sm:px-6 lg:px-8">
-          <div className="prose-lg text-base sm:text-lg">{renderBody(article.body)}</div>
+          <div className="prose-lg text-base sm:text-lg">{renderBody(localizedBody)}</div>
         </div>
       </article>
 
